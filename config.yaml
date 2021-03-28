@@ -1,0 +1,84 @@
+baseURL: "http://example.org"
+languageCode: "en-us"
+title: "Eldaroth's Brain Dump"
+theme: "beautifulhugo"
+enableGitInfo: false
+
+params:
+  subtitle: "Dumping ground for my thoughts and ideas on various topics"
+  enableEmojis: true
+  mainSections:
+  - "posts"
+  #favicon: "img/*.ico"
+  #logo: "img/*.png"
+  rss: true
+  socialShare: true
+  #readingTime: true
+  #wordCount: true
+  # bigimg:
+    # src: "img/sphere.jpg"
+    # desc: "Sphere"
+      # # position: see values of CSS background-position.
+      # # position: "center top"
+
+author:
+  name: "Flavio"
+  # website: ""
+  email: "eldaroth@protonmail.com"
+  github: "Eldaroth"
+  twitter: "Elda_FW"
+  reddit: "Thoradle"
+  #facebook: "username"
+  #gitlab = "username"
+  #bitbucket = "username"
+  #reddit = "username"
+  #linkedin = "username"
+  #xing = "username"
+  #stackoverflow = "users/XXXXXXX/username"
+  #snapchat = "username"
+  # instagram = "username"
+  # youtube = "user/username" # or channel/channelname
+  # soundcloud = "username"
+  # spotify = "username"
+  # bandcamp = "username"
+  # itchio = "username"
+  # vk = "username"
+  # paypal = "username"
+  # telegram = "username"
+  # 500px = "username"
+  # codepen = "username"
+  # mastodon = "url"
+  # kaggle = "username"
+  # weibo = "username"
+  # slack = "username"
+
+menu:
+  main:
+  - identifier: "blog"
+    name: "blog"
+    url: ""
+    weight: 1
+  - identifier: "about"
+    name: "about"
+    url: "about/"
+    weight: 10
+  - identifier: "contact"
+    name: "contact"
+    url: contact
+    weight: 20
+  - identifier: "tags"
+    name: "tags"
+    url: "tags/"
+    weight: 40
+
+  # Topics Submenus
+  - identifier: "topics"
+    name: "topics"
+    weight: 30
+  - parent: "topics"
+    name: "picoctf"
+    url: "posts/picoctf/"
+    weight: 1
+  - parent: "topics"
+    name: "linux"
+    url: "posts/linux/"
