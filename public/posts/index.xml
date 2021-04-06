@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Eldaroth&#39;s Brain Dump</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on Eldaroth&#39;s Brain Dump</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>eldaroth@protonmail.com (Flavio)</managingEditor>
+    <webMaster>eldaroth@protonmail.com (Flavio)</webMaster>
+    <lastBuildDate>Sun, 28 Mar 2021 13:32:40 +0200</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
