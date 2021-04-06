@@ -275,36 +275,36 @@ class VaultDoorTraining {
 <p>This vault uses some complicated arrays! I hope you can make sense of it, special agent. The source code for this vault is here: <a href="https://jupiter.challenges.picoctf.org/static/ff2585f7afd21b81f69d2fbe37c081ae/VaultDoor1.java">VaultDoor1.java</a></p>
 <h2 id="writeup-1">Writeup</h2>
 <p>There is a new check in the Java File with the String function <code>charAt</code>, where it compares the input with the specified chars necessary at each position. We can manually get the corresponding char for each position (&lsquo;easier&rsquo;) or with a Python script:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python3</span>
-<span style="color:#f92672">import</span> operator
-<span style="color:#f92672">import</span> re
-<span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-path <span style="color:#f92672">=</span> Path<span style="color:#f92672">.</span>cwd()
-file <span style="color:#f92672">=</span> open(path<span style="color:#f92672">/</span><span style="color:#e6db74">&#39;VaultDoor1.java&#39;</span>)
-input <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
+<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">/</span><span class="s1">&#39;VaultDoor1.java&#39;</span><span class="p">)</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-regex <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&#39;&#39;\(\d{1,2}\)&#39;&#39;&#39;</span>)
-regex2 <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">[a-zA-Z0-9_]</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">&#39;</span>)
-key <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(regex, input)
-value <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(regex2, input)
+<span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;&#39;\(\d{1,2}\)&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="n">regex2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">[a-zA-Z0-9_]</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">input</span><span class="p">)</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex2</span><span class="p">,</span> <span class="nb">input</span><span class="p">)</span>
 
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(key)):
-    length <span style="color:#f92672">=</span> len(key[i]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-    key[i] <span style="color:#f92672">=</span> int(key[i][<span style="color:#ae81ff">1</span>:length])
-<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(len(value)):
-    length <span style="color:#f92672">=</span> len(value[k]) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-    value[k] <span style="color:#f92672">=</span> value[k][<span style="color:#ae81ff">1</span>:length]
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)):</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="n">length</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)):</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">value</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="n">length</span><span class="p">]</span>
 
-new_dict <span style="color:#f92672">=</span> dict(zip(key, value))
-sorted_dict <span style="color:#f92672">=</span> dict(sorted(new_dict<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span>operator<span style="color:#f92672">.</span>itemgetter(<span style="color:#ae81ff">0</span>)))
+<span class="n">new_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+<span class="n">sorted_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">new_dict</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
 
-text <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;picoCTF{&#34;</span>, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
-<span style="color:#66d9ef">for</span> key,value <span style="color:#f92672">in</span> sorted_dict<span style="color:#f92672">.</span>items():
-    <span style="color:#66d9ef">print</span>(value, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;}&#34;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;&#34;</span>)
+<span class="n">text</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;picoCTF{&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">sorted_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;}&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
 
 </code></pre></div><h3 id="flag-1">Flag</h3>
 <p>picoCTF{d35cr4mbl3_tH3_cH4r4cT3r5_75092e}
@@ -443,7 +443,7 @@ text <span style="color:#f92672">=</span> []
         <p class="credits copyright text-muted">
           
             
-              Flavio
+              <a href="brain-dump.xyz">Flavio</a>
             
           
 

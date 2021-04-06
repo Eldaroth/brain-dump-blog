@@ -3,12 +3,16 @@ languageCode: "en-us"
 title: "Eldaroth's Brain Dump"
 theme: "beautifulhugo"
 enableGitInfo: false
+pygmentsStyle: "trac"
+pygmentsCodeFences: true
+pygmentsUseClasses: true
 
 params:
   subtitle: "Dumping ground for my thoughts and ideas on various topics"
   enableEmojis: true
   mainSections:
   - "posts"
+  commit: false
   #favicon: "img/*.ico"
   #logo: "img/*.png"
   rss: true
@@ -23,34 +27,11 @@ params:
 
 author:
   name: "Flavio"
-  # website: ""
+  website: "brain-dump.xyz"
   email: "eldaroth@protonmail.com"
   github: "Eldaroth"
   twitter: "Elda_FW"
   reddit: "Thoradle"
-  #facebook: "username"
-  #gitlab = "username"
-  #bitbucket = "username"
-  #reddit = "username"
-  #linkedin = "username"
-  #xing = "username"
-  #stackoverflow = "users/XXXXXXX/username"
-  #snapchat = "username"
-  # instagram = "username"
-  # youtube = "user/username" # or channel/channelname
-  # soundcloud = "username"
-  # spotify = "username"
-  # bandcamp = "username"
-  # itchio = "username"
-  # vk = "username"
-  # paypal = "username"
-  # telegram = "username"
-  # 500px = "username"
-  # codepen = "username"
-  # mastodon = "url"
-  # kaggle = "username"
-  # weibo = "username"
-  # slack = "username"
 
 menu:
   main:
