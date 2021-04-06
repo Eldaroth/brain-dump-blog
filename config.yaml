@@ -1,8 +1,9 @@
 baseURL: "https://www.brain-dump.xyz"
-languageCode: "en-us"
+languageCode: "en"
+defaultContentLanguage: "en"
 title: "Eldaroth's Brain Dump"
 theme: "beautifulhugo"
-enableGitInfo: false
+enableGitInfo: true
 pygmentsStyle: "trac"
 pygmentsCodeFences: true
 pygmentsUseClasses: true
@@ -11,8 +12,9 @@ params:
   subtitle: "Dumping ground for my thoughts and ideas on various topics"
   enableEmojis: true
   mainSections:
-  - "posts"
-  commit: false
+  - "post"
+  commit: "https://github.com/Eldaroth/brain-dump-blog/commits/main"
+
   #favicon: "img/*.ico"
   #logo: "img/*.png"
   rss: true
@@ -41,11 +43,11 @@ menu:
     weight: 1
   - identifier: "about"
     name: "about"
-    url: "about/"
+    url: "page/about/"
     weight: 10
   - identifier: "contact"
     name: "contact"
-    url: contact
+    url: "page/contact/"
     weight: 20
   - identifier: "tags"
     name: "tags"
@@ -58,8 +60,8 @@ menu:
     weight: 30
   - parent: "topics"
     name: "picoctf"
-    url: "posts/picoctf/"
+    url: "post/picoctf/"
     weight: 1
   - parent: "topics"
     name: "linux"
-    url: "posts/linux/"
+    url: "post/linux/"

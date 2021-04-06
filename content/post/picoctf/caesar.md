@@ -11,7 +11,7 @@ Decrypt this **message**.
 <!--more-->
 
 ## Writeup
-The message contains the encrypted flag **picoCTF{ynkooejcpdanqxeykjrbdofgkq}**. Based on the name of the challenge we can assume it's a Caesar cipher, similar to the [ROT13 challenge]() we solved before. But in this case we do not know how many times the letters were shifted, i.e. it does not have to be 13 times like with ROT13.
+The message contains the encrypted flag **picoCTF{ynkooejcpdanqxeykjrbdofgkq}**. Based on the name of the challenge we can assume it's a Caesar cipher, similar to the [ROT13 challenge](/posts/picoctf/13) we solved before. But in this case we do not know how many times the letters were shifted, i.e. it does not have to be 13 times like with ROT13.
 
 We still can use the Python script we created for the ROT13 challenge and adapt it to the new challenge, so we loop through shifts from 2 to 25 letters (max possible shifts, as the alphabet only has 26 letters).
 
