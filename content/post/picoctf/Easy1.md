@@ -119,5 +119,6 @@ if __name__ == "__main__":
 After saving the Python script we can make it executable by using the shell command `$ chmod +x` and execute it simply by typing in `$ ./vigenere.py`.
 
 When executing the script, it prompts you with the question if you'd like to encrypt a message. As we want to decrypt the message, we answer with 'N'. Now we can enter the message which we got in the Description: **UFJKXQZQUNB**, press Enter and then we enter the key **SOLVECRYPTO**. After pressing enter again, it will spit out the decrypted message and voila, we got the flag.
+
 ### Flag
 picoCTF{CRYPTOISFUN}
