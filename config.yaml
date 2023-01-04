@@ -3,7 +3,7 @@ languageCode: "en"
 defaultContentLanguage: "en"
 title: "Eldaroth's Brain Dump"
 theme: "beautifulhugo"
-enableGitInfo: true
+enableGitInfo: false # disables last modified
 pygmentsStyle: "trac"
 pygmentsCodeFences: true
 pygmentsUseClasses: true
@@ -32,8 +32,7 @@ author:
   website: "brain-dump.xyz"
   email: "eldaroth@protonmail.com"
   github: "Eldaroth"
-  twitter: "Elda_FW"
-  reddit: "Thoradle"
+  mastodon: "techhub.social/@eldaroth"
 
 menu:
   main:
