@@ -61,7 +61,12 @@ menu:
   - parent: "topics"
     name: "picoctf"
     url: "post/picoctf/"
-    weight: 1
+    weight: 3
   - parent: "topics"
     name: "linux"
     url: "post/linux/"
+    weight: 2
+  - parent: "topics"
+    name: "cloud"
+    url: "post/cloud/"
+    weight: 1
