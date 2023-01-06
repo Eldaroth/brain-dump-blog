@@ -3,7 +3,7 @@ title: "Background & Foreground Processes"
 subtitle: "Linux Foundations"
 date: 2023-01-06T19:12:36+01:00
 tags: ['linux', 'cli']
-draft: true
+draft: false
 ---
 Linux organizes different programs being run or waiting for CPU resources in processes. If one of these programs becomes slow or even stops responding, Linux offers various tools for examining processes and terminating those which are misbehaving.
 
