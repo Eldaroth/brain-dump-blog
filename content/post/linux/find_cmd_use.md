@@ -13,7 +13,7 @@ There are usually two commands you will learn to use in the command line.
 
 ## locate
 
-***Locate*** uses a previously generated database and does not search your entire filesystem. This also makes it really fast compared to other search commands like **find**. However, it also means that files deleted after the database has been updated still show up in the search. Also files which were created after the last update of won't be included. For the first shortcoming there is a simple solution by using the **-e** option, e.g. `$ locate -e mysql`. 
+***Locate*** uses a previously generated database and does not search your entire filesystem. This also makes it really fast compared to other search commands like **find**. However, it also means that files deleted after the database has been updated still show up in the search. Also files which were created after the last update won't be included. For the first shortcoming there is a simple solution by using the **-e** option, e.g. `$ locate -e mysql`. 
 
 The command simply outputs any matching file as a list in the command line. For better readability you can also pipe the output into **less**:
 
